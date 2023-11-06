@@ -22,23 +22,27 @@ btn.addEventListener("click", (e) => {
 });
 
 // Start Functions
-async function createMap(ip = "?fields=61439") {
-    let res = await fetch("http://ip-api.com/json/" + ip);
+async function createMap(ip) {
+    let location = { ip: ip };
 
-    let location = await res.json();
+    if (!location.ip) {
+        let res = await fetch("https://api.ipify.org?format=json");
+
+        location = await res.json();
+    }
 
     let data = await fetch(
-        "https://geo.ipify.org/api/v2/country?apiKey=at_chPuNnvpje0Em5YwBeo8qS8aGHPGg&ipAddress=" +
-            location.query
+        "https://geo.ipify.org/api/v2/country,city?apiKey=at_chPuNnvpje0Em5YwBeo8qS8aGHPGg&ipAddress=" +
+            location.ip
     );
 
     let info = await data.json();
 
-    map.setView([location.lat, location.lon], 13);
+    map.setView([info.location.lat, info.location.lng], 13);
 
     if (marker) map.removeLayer(marker);
 
-    marker = L.marker([location.lat, location.lon], {
+    marker = L.marker([info.location.lat, info.location.lng], {
         icon: locationIcon,
     }).addTo(map);
 
