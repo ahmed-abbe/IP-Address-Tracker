@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+        <title>IP Address Tracker</title>
+        <!-- Render All Elements Normally -->
+        <link rel="stylesheet" href="CSS/normalize.css" />
+        <!-- Main CSS File -->
+        <link rel="stylesheet" href="CSS/Master.css" />
+        <!-- Leaflet Library CSS File -->
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""
+        />
+        <!-- Leaflet Library JS File -->
+        <script
+            src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""
+        ></script>
+        <!-- Import Font From Google Fonts Library -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <section class="search">
+            <picture class="background">
+                <source
+                    media="(max-width: 767px)"
+                    srcset="images/pattern-bg-mobile.png"
+                />
+                <img src="images/pattern-bg-desktop.png" />
+            </picture>
+            <div class="container">
+                <h1 class="heading">IP Address Tracker</h1>
+                <form>
+                    <input
+                        type="text"
+                        name="IP"
+                        placeholder="Search for any IP address or domain"
+                        autocomplete="off"
+                    />
+                    <button>
+                        <img src="images/icon-arrow.svg" alt="arrow" />
+                    </button>
+                </form>
+                <div class="info">
+                    <div class="col">
+                        <p>IP Address</p>
+                        <h3></h3>
+                    </div>
+                    <div class="col">
+                        <p>Location</p>
+                        <h3></h3>
+                    </div>
+                    <div class="col">
+                        <p>Timezone</p>
+                        <h3></h3>
+                    </div>
+                    <div class="col">
+                        <p>ISP</p>
+                        <h3></h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="map"></div>
+        <script src="main.js"></script>
+    </body>
+</html>

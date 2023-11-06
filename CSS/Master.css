@@ -1,0 +1,149 @@
+/* Start Variables */
+:root {
+    --Very-Dark-Gray: hsl(0, 0%, 17%);
+    --Dark-Gray: hsl(0, 0%, 59%);
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Rubik", sans-serif;
+    background-color: black;
+}
+.container {
+    padding-inline: 15px;
+    margin-inline: auto;
+}
+/* Small Screens */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium Screens */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Small Screens */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End Global Rules */
+/* Start Search Section */
+.search {
+    position: relative;
+}
+.search .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.search .background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.search .container {
+    position: relative;
+    text-align: center;
+    padding-top: 25px;
+    height: 300px;
+}
+.search .container h1 {
+    margin: 0 0 30px;
+    color: white;
+    font-weight: 500;
+}
+.search .container form {
+    display: flex;
+    justify-content: center;
+}
+.search .container form input {
+    width: 400px;
+    max-width: 100%;
+    padding: 12px 8px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-radius: 8px 0 0 8px;
+}
+.search .container form input::placeholder {
+    transition: 0.5s;
+}
+.search .container form input:focus::placeholder {
+    opacity: 0;
+}
+.search .container form button {
+    width: 45px;
+    border: none;
+    outline: none;
+    background-color: black;
+    border-radius: 0 8px 8px 0;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+.search .container form button img {
+    width: 15px;
+}
+.search .container .info {
+    position: absolute;
+    width: calc(100% - 30px);
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 20px;
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    z-index: 2;
+}
+@media (max-width: 767px) {
+    .search .container .info {
+        flex-direction: column;
+        padding: 5px;
+    }
+    .search .container .info .col {
+        padding-bottom: 15px;
+    }
+}
+@media (min-width: 768px) {
+    .search .container .info .col {
+        width: calc(100% / 4);
+        text-align: left;
+        padding: 0 15px;
+    }
+    .search .container .info .col:not(:last-of-type) {
+        border-right: 1px solid #ddd;
+    }
+}
+.search .container .info .col p {
+    margin-bottom: 15px;
+    color: var(--Dark-Gray);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: default;
+    user-select: none;
+}
+@media (max-width: 767px) {
+    .search .container .info .col p {
+        margin-bottom: 5px;
+    }
+}
+.search .container .info .col h3 {
+    margin: 0;
+}
+/* End Search Section */
+/* Start Map */
+#map {
+    height: calc(100vh - 300px);
+    position: relative;
+    z-index: 1;
+}
+/* End Map */
